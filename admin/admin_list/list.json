@@ -1,0 +1,126 @@
+{
+  "management": {
+    "serverManagement": {
+      "description": "服务器管理",
+      "operations": {
+        "addServer": "添加服务器",
+        "listServers": "列出服务器",
+        "updateServerConfig": "更新服务器配置",
+        "removeServer": "删除服务器"
+      },
+      "features": {
+        "monitoring": "服务器状态监控",
+        "loadBalancing": "负载均衡",
+        "remoteAccess": "远程访问和控制"
+      }
+    },
+    "databaseManagement": {
+      "description": "多数据库管理",
+      "operations": {
+        "connectDB": "连接数据库",
+        "listDatabases": "列出数据库",
+        "queryDB": "执行数据库查询",
+        "backupDB": "备份数据库",
+        "restoreDB": "恢复数据库",
+        "manageUsers": "管理数据库用户",
+        "defineSchema": "定义自定义数据库模式"
+      },
+      "features": {
+        "multiDBSupport": "支持多个数据库实例",
+        "replication": "数据同步和复制",
+        "scalability": "数据库可扩展性"
+      },
+      "customSchema": {
+        "tables": [
+          {
+            "tableName": "user_info",
+            "columns": [
+              {
+                "fieldName": "user_id",
+                "dataType": "INT",
+                "isPrimaryKey": true,
+                "isNullable": false
+              },
+              {
+                "fieldName": "username",
+                "dataType": "VARCHAR(50)",
+                "isPrimaryKey": false,
+                "isNullable": false
+              },
+              {
+                "fieldName": "email",
+                "dataType": "VARCHAR(100)",
+                "isPrimaryKey": false,
+                "isNullable": false
+              },
+              {
+                "fieldName": "created_at",
+                "dataType": "TIMESTAMP",
+                "isPrimaryKey": false,
+                "isNullable": false,
+                "default": "CURRENT_TIMESTAMP"
+              }
+            ]
+          },
+          {
+            "tableName": "transaction_logs",
+            "columns": [
+              {
+                "fieldName": "transaction_id",
+                "dataType": "VARCHAR(36)",
+                "isPrimaryKey": true,
+                "isNullable": false
+              },
+              {
+                "fieldName": "user_id",
+                "dataType": "INT",
+                "isPrimaryKey": false,
+                "isNullable": false
+              },
+              {
+                "fieldName": "amount",
+                "dataType": "DECIMAL(10,2)",
+                "isPrimaryKey": false,
+                "isNullable": false
+              },
+              {
+                "fieldName": "status",
+                "dataType": "VARCHAR(20)",
+                "isPrimaryKey": false,
+                "isNullable": true
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tableViewConfig": {
+      "description": "自定义表格显示",
+      "operations": {
+        "createTableView": "创建表格视图",
+        "readTableView": "读取表格数据",
+        "updateTableView": "更新表格数据",
+        "deleteTableView": "删除表格视图"
+      },
+      "features": {
+        "dynamicColumns": "支持动态字段配置",
+        "filtering": "支持数据过滤",
+        "sorting": "支持排序",
+        "pagination": "支持分页"
+      }
+    },
+    "scriptExecution": {
+      "description": "远程脚本管理",
+      "operations": {
+        "runPythonScript": "运行 Python 脚本",
+        "runShellScript": "运行 Shell 脚本",
+        "scheduleScript": "定时运行脚本",
+        "viewExecutionLogs": "查看执行日志"
+      },
+      "features": {
+        "multiServerExecution": "支持多服务器脚本执行",
+        "parallelProcessing": "并行处理脚本"
+      }
+    }
+  }
+}
